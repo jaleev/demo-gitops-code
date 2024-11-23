@@ -22,12 +22,12 @@ jobs:
 
       - name: Build Docker image
         run: |
-          IMAGE_TAG=${{ secrets.DOCKER_USERNAME }}/manrala:build-${{ github.run_id }}
+          IMAGE_TAG=${{ secrets.DOCKER_USERNAME }}/frontend:build-${{ github.run_id }}
           docker build -t $IMAGE_TAG .
           echo "Docker image built with tag $IMAGE_TAG"
 
       - name: Push Docker image
         run: |
-          IMAGE_TAG=${{ secrets.DOCKER_USERNAME }}/manrala:build-${{ github.run_id }}
+          IMAGE_TAG=${{ secrets.DOCKER_USERNAME }}/frontend:build-${{ github.run_id }}
           docker push $IMAGE_TAG
           echo "Docker image pushed to Docker Hub successfully with tag $IMAGE_TAG"
