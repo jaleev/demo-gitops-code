@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello GitOps!!!!')
+  res.send('GitOps Demo App with Node.js')
 })
 
 app.listen(port, () => {
