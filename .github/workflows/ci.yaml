@@ -51,8 +51,8 @@ jobs:
           ls -lrt
           echo $IMAGE_TAG
           sed -i "s|image: .*|image: $IMAGE_TAG|g" frontend/front-deploy.yaml
-          git config --global user.email ${{ env.GIT_EMAIL }}
-          git config --global user.name ${{ env.GIT_USERNAME }}
+          git config --global user.email ${{ vars.GIT_EMAIL }}
+          git config --global user.name ${{ vars.GIT_USERNAME }}
           git add .
           git commit -m "Update image to $IMAGE_TAG"
           git push origin main
